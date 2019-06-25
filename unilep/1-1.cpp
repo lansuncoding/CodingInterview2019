@@ -3,14 +3,11 @@
 #include <iostream>
 using namespace std;
 
-bool isUniqueChars(string s)
-{
+bool isUniqueChars(string s) {
   long bits = 0l;
-  for (char c : s)
-  {
+  for (char c : s) {
     long bit = 1 << (c - 'A');
-    if (bits & bit)
-    {
+    if (bits & bit) {
       return false;
     }
     bits |= bit;
@@ -18,8 +15,7 @@ bool isUniqueChars(string s)
   return true;
 }
 
-int main()
-{
+int main() {
   cout << isUniqueChars("abcde") << endl;
   cout << isUniqueChars("aa") << endl;
   cout << isUniqueChars("abcdea") << endl;
